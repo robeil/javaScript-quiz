@@ -1,0 +1,15 @@
+h1 {
+    font-size: 20px;
+}
+.intial {
+    font-size: 15px;
+}
+#submit {
+    float: right;
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .start-button {
+    width: 100%;
+  }
+}
