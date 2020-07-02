@@ -8,24 +8,25 @@
 <head>
     <title>Start Quize</title>
 </head>
-
 <body>
-    <div>
+    <div class="controls">
         <h1>Start Quize</h1>
     </div>
+    <div class="container">
+    <div id="question-container" class="hide"></div>
+    <div id="question">Questions</div>
     <br>
-    <br>
-    <br>
-   <!--<div>
-
-    </div> -->
-            <div class="start-button">
+        <br>
+        <br>
                 <div>
-                <button type="button">Start Quize</button>
-                    <label for="initial-input">Intial =</label>
+                    
+                <button type="button" id="start-btn" class="start-btn">Start Quize</button>
+                <label for="initial-input">Intial=</label>
                     <input type="text" id="intial" name="initial-input">
                     <input type="submit" id="submit" value="Submit">
+                  
                 </div>
+            </div>
         </div>
         </form>
         <script src="script.js"></script>

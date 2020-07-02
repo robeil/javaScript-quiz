@@ -7,6 +7,16 @@ h1 {
 #submit {
     float: right;
 }
+#start-btn {
+  width: 20%;
+}
+#intial {
+  width: 30%;
+  align-items: center;
+}
+#submit {
+  width: 20%;
+}
 @media only screen and (max-width:500px) {
   /* For mobile phones: */
   .start-button {
