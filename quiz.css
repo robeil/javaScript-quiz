@@ -1,0 +1,74 @@
+
+#question-container {
+  font-family: 'Oleo Script', cursive;
+  text-align: center;
+  font-size: 35px;
+}
+#timer {
+  color: red;
+  font-size: 20px;
+  float: right;
+  margin-top: -30px;
+  font-family: 'Oleo Script', cursive;
+}
+
+#question {
+  display: none;
+  font-size: 30px;
+  font-family: 'Oleo Script', cursive;
+}
+#intial {
+    font-size: 15px;
+    font-family: 'Oleo Script', cursive;
+}
+#submit {
+    float: right;
+    font-family: 'Oleo Script', cursive;
+    border-radius: 5px;
+}
+#start-btn {
+  width: 20%;
+  font-family: 'Oleo Script', cursive;
+  border-radius: 5px;
+}
+#view {
+  font-size: 15px;
+}
+#input {
+  font-family: 'Oleo Script', cursive;
+}
+#intial {
+  width: 30%;
+  align-items: center;
+  font-family: 'Oleo Script', cursive;
+ border-radius: 5px;
+}
+#go-back {
+  border-radius: 5px;
+  font-family: 'Oleo Script', cursive;
+}
+#clear-score {
+  border-radius: 5px;
+  font-family: 'Oleo Script', cursive;
+}
+#submit {
+  width: 20%;
+}
+#submit:hover {
+  background-color: aqua;
+}
+#start-btn:hover {
+  background-color: aqua;
+}
+#go-back:hover {
+  background-color: aqua;
+}
+#clear-score:hover {
+  background-color: aqua;
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .start-button {
+    width: 100%;
+  }
+}
