@@ -2,7 +2,7 @@
 #question-container {
   font-family: 'Oleo Script', cursive;
   text-align: center;
-  font-size: 35px;
+  font-size: 15px;
 }
 #timer {
   color: red;
@@ -11,7 +11,10 @@
   margin-top: -30px;
   font-family: 'Oleo Script', cursive;
 }
-
+h2 {
+  text-align: center;
+  font-family: 'Oleo Script', cursive;
+}
 #question {
   display: none;
   font-size: 30px;
