@@ -2,7 +2,7 @@
 var timer = document.getElementById("timer");
 var mainTimer = document.getElementById("main");
 var myListner = document.getElementById("start-btn");
-var secondsLeft = 75;
+var secondsLeft = 5;
 var counter = 0;
 var i;
 var j;
@@ -39,8 +39,9 @@ function setMyTime() {
         timer.textContent = secondsLeft + " seconds remaining !";
 
         if (secondsLeft === 0) {
-            clearInterval(timerInterval);
-            startQuiz();
+            clearInterval(setTimeout);
+           
+
             //if your are answering the last question callquizEnd function
             // if it is not a last question then call getNextQuestion()
             /*getNextQuestion();*/
@@ -58,31 +59,26 @@ function getNextQuestion() {
 }
 */
 function startQuiz() {
-
-    for (i = 0; i < questions.length;i++) {
+    
+    for (i = 0; i < questions.length; i++) {
         // questionContainer.append(JSON.stringify(questions[i]));
         questionContainer.append(JSON.stringify(questions[0].title));
         // add an another for loop to looop through the options
-        console.log(questions[0]);
+        console.log(questions[i].choices);
+         for (var j = 0; j < questions.length; j++) {
+             console.log(questions[i].choices[j]);
+         }
 
-        for (j = 0; j < questions.length;i++) {
-
-            questionContainer.append(questions[i].choices);
-
-            console.log(questions[i]);
-        }
-        for (j = 0; j < questions.length; j++) {
-
-            questionContainer.append(questions[i].choices);
-
-            console.log(questions[i].choices);
-        }
-        /* for (var j = 0; j < questions.length; j++) {
-             questionContainer.appendChild(questions[0].title);
-             console.log(questions);
-         }*/
     }
-}//end startQuiz fct def
+
+   /*
+   for (i = 0; i < questions.length; i++) {
+    for (var j = 0; j < questions[i].choices.length; j++) {
+        questionContainer.append(JSON.stringify(questions[0].title));
+            console.log(questions[i].choices[j]);
+    }*/  
+        }
+//end startQuiz fct def
 startQuiz();
 
 
