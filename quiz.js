@@ -65,17 +65,17 @@ function startQuiz() {
         // add an another for loop to looop through the options
         console.log(questions[0]);
 
-        for (j = 0; j < questions.length; j++) {
+        for (j = 0; j < questions.length;i++) {
 
-            questionContainer.appendChild(questions[1][1].choices);
+            questionContainer.append(questions[i].choices);
 
-            console.log(questions[1][1]);
+            console.log(questions[i]);
         }
         for (j = 0; j < questions.length; j++) {
 
-            questionContainer.appendChild(questions[2][1].choices);
+            questionContainer.append(questions[i].choices);
 
-            console.log(questions[2][1]);
+            console.log(questions[i].choices);
         }
         /* for (var j = 0; j < questions.length; j++) {
              questionContainer.appendChild(questions[0].title);
