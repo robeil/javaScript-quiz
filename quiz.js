@@ -2,7 +2,7 @@
 var timer = document.getElementById("timer");
 var mainTimer = document.getElementById("main");
 var myListner = document.getElementById("start-btn");
-var secondsLeft = 15;
+var secondsLeft = 75;
 var counter = 0;
 var i;
 var j;
@@ -31,46 +31,61 @@ var currentQuestionIndex = 0;
 var questionContainer = document.getElementById("question-container");
 
 function setMyTime() {
+
+    myListner.addEventListener("click", function() {
+
     var timerInterval = setInterval(function () {
         secondsLeft--;
-        timer.textContent = secondsLeft + "   left to finish question !";
+        timer.textContent = secondsLeft + " seconds remaining !";
+
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
+            startQuiz();
             //if your are answering the last question callquizEnd function
             // if it is not a last question then call getNextQuestion()
-            getNextQuestion();
+            /*getNextQuestion();*/
         }
     }, 1000)
+});
 }//end setMyTimer fct def
-
+setMyTime();
+/*
 function getNextQuestion() {
     var currentQuestion = questions[currentQuestionIndex];
 
     // display this currentQuestion in the question container
     // another fr loop to display all the options related to questions
 }
-
+*/
 function startQuiz() {
 
-    setMyTime();
-
-    //currentQuestionIndex.append(questions[i].title);
- 
-    for (i = 0; i < questions.length; i++) {
+    for (i = 0; i < questions.length;i++) {
         // questionContainer.append(JSON.stringify(questions[i]));
         questionContainer.append(JSON.stringify(questions[0].title));
         // add an another for loop to looop through the options
-        console.log(questions);
+        console.log(questions[0]);
 
-       /* for (var j = 0; j < questions.length; j++) {
-            questionContainer.appendChild(questions[0].title);
-            console.log(questions);
-        }*/
+        for (j = 0; j < questions.length; j++) {
 
+            questionContainer.appendChild(questions[1][1].choices);
+
+            console.log(questions[1][1]);
+        }
+        for (j = 0; j < questions.length; j++) {
+
+            questionContainer.appendChild(questions[2][1].choices);
+
+            console.log(questions[2][1]);
+        }
+        /* for (var j = 0; j < questions.length; j++) {
+             questionContainer.appendChild(questions[0].title);
+             console.log(questions);
+         }*/
     }
 }//end startQuiz fct def
+startQuiz();
 
-myListner.addEventListener("click",  startQuiz );
+
 
 
 //function setNextQuestion(){
