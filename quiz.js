@@ -29,7 +29,7 @@ var questions = [
 var currentQuestionIndex = 0;
 
 var questionContainer = document.getElementById("question-container");
-
+// creating set time
 function setMyTime() {
 
     myListner.addEventListener("click", function() {
@@ -40,7 +40,6 @@ function setMyTime() {
 
         if (secondsLeft === 0) {
             clearInterval(setTimeout);
-           
 
             //if your are answering the last question callquizEnd function
             // if it is not a last question then call getNextQuestion()
@@ -80,9 +79,6 @@ function startQuiz() {
         }
 //end startQuiz fct def
 startQuiz();
-
-
-
 
 //function setNextQuestion(){
   // var ctrl = document.getElementsByName("questions");
