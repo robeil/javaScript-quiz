@@ -3,14 +3,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
 <head>
-    <link type="text/css" rel="stylesheet" href="quiz.css" />
+    <!--css and google font reference link-->
+    <link type="text/css" rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
     <title>Start Quize</title>
 </head>
-
 <body>
+    <!--the high score text and the welcome text-->
     <div class="controls">
         <h1 id="view">View Highscore</h1>
     </div>
@@ -27,7 +27,7 @@
     </div>
         <br>
         <div>
-            
+        <!--start quiz and intial in put button-->
             <button type="button" id="start-btn">Start Quiz</button>
             <label id="input" for="initial-input">Enter Intial=</label>
             <input type="text" id="intial" name="initial-input">
@@ -38,10 +38,11 @@
     </form>
     <br>
     <br>
+    <!--go back and highscores button-->
     <div class="back">
         <button id="go-back">Go back</button>
         <button id="clear-score">Clear Highscores</button>
     </div>
-    <script src="quiz.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
