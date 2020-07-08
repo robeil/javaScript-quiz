@@ -2,7 +2,7 @@
 var timer = document.getElementById("timer");
 var mainTimer = document.getElementById("main");
 var myListner = document.getElementById("start-btn");
-var secondsLeft = 5;
+var secondsLeft = 75;
 var counter = 0;
 var i;
 var j;
