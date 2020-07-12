@@ -2,6 +2,7 @@
 var timer = document.getElementById("timer");
 var mainTimer = document.getElementById("main");
 var myListner = document.getElementById("start-btn");
+var resert = document.getElementById("clear-score");
 var secondsLeft = 75;
 var counter = 0;
 var i;
@@ -40,10 +41,8 @@ var setIntervalId;
 myListner.addEventListener("click",function() { 
     document.getElementById("header").classList.add("hide");
     document.getElementById("question-container").classList.remove("hide");
-    
     setIntervalId = setInterval(countDown, 1000)
 }) 
-
 
 function countDown() {
     document.getElementById("questions").innerHTML=questions[currentQuestionIndex].title
@@ -61,7 +60,5 @@ function countDown() {
      }
     document.getElementById("timer").innerHTML=secondsLeft--
 }
-
-
 
 var questionContainer = document.getElementById("question-container");

@@ -14,7 +14,16 @@
 .hide {
   display: none;
 }
+#hr {
+  width: 80%;
+}
+p {
+  font-size: 30px;
+  font-family: 'Oleo Script', cursive;
+}
+
 h2 {
+  font-size: 40px;
   text-align: center;
   font-family: 'Oleo Script', cursive;
 }
@@ -37,6 +46,7 @@ h2 {
 }
 #view {
   font-size: 15px;
+  color: purple;
 }
 #input {
   font-family: 'Oleo Script', cursive;
@@ -70,6 +80,7 @@ h2 {
   background-color: aqua;
 }
 #start-btn, #intial, #go-back, #clear-score,#submit {
+  background-color: purple;
   float: left;
 }   
 @media only screen and (max-width:500px) {
