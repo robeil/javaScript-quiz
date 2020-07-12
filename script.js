@@ -5,95 +5,63 @@ var myListner = document.getElementById("start-btn");
 var secondsLeft = 75;
 var counter = 0;
 var i;
-var j;
 var questions = [
     {
-        title: 'Commonly used data types DO NOT include:',
-        choices: ['strings', 'booleans', 'alerts', 'numbers'],
+        title: '(1) JavaScript was initialyy created to make web pages alive',
+        choices: ['Worrect', 'Wrong'],
         answer: 'alerts'
     },
 
     {
-        title: 'The condition in an if / else statement is enclosed within ____.',
-        choices: ['quotes', 'curly brackets', 'parentheses', 'square brackets'],
-        answer: 'parentheses'
+        title: '(2) The meaning of (this) keyword in the JavaScript is to refer__________',
+        choices: ['current object', 'variable containing value', 'previus object'],
+        answer: 'current object'
     },
 
     {
-        title: "In JavaScript if you put a number in quotes, it will be treated as a text string.",
-        choices: ["correct", "wrong"],
-        answer: "alert"
+        title: '(3) In JavaScript if you put a number in quotes, it will be treated as a text string.',
+        choices: ['Correct', 'Wrong'],
+        answer: 'alert'
+    },
+    {
+        title: '(4) In the end of the JavaScript, what will appear?',
+        choices: ['<script>','</script>','<html>'],
+        answer: '</script>'
+    },
+    {
+        title: '(5) In JavaScript, the__________ is object of target language data type enclosing the object of source language.',
+        choices:['form','wrapper','cursor'],
+        answer: 'wrapper'
     }
 ]
 
 var currentQuestionIndex = 0;
+var setIntervalId;
+myListner.addEventListener("click",function() { 
+    document.getElementById("header").classList.add("hide");
+    document.getElementById("question-container").classList.remove("hide");
+    
+    setIntervalId = setInterval(countDown, 1000)
+}) 
+
+
+function countDown() {
+    document.getElementById("questions").innerHTML=questions[currentQuestionIndex].title
+    var choices = questions[currentQuestionIndex].choices
+    document.getElementById("choices").textContent=""
+    for (let i = 0; i < choices.length; i++) {
+       
+         var button = document.createElement("button")
+         
+         button.textContent=choices[i]
+         button.addEventListener("click", function () {
+             currentQuestionIndex++
+         })
+         document.getElementById("choices").appendChild(button)
+     }
+    document.getElementById("timer").innerHTML=secondsLeft--
+}
+
+
 
 var questionContainer = document.getElementById("question-container");
-// creating set time
-function setMyTime() {
-
-    myListner.addEventListener("click", function() {
-
-    var timerInterval = setInterval(function () {
-        secondsLeft--;
-        timer.textContent = secondsLeft + " seconds remaining !";
-
-        if (secondsLeft === 0) {
-            clearInterval(setTimeout);
-
-            //if your are answering the last question callquizEnd function
-            // if it is not a last question then call getNextQuestion()
-            /*getNextQuestion();*/
-        }
-    }, 1000)
-});
-}//end setMyTimer fct def
-setMyTime();
-/*
-function getNextQuestion() {
-    var currentQuestion = questions[currentQuestionIndex];
-
-    // display this currentQuestion in the question container
-    // another fr loop to display all the options related to questions
-}
-*/
-function startQuiz() {
-    
-    for (i = 0; i < questions.length; i++) {
-        // questionContainer.append(JSON.stringify(questions[i]));
-        questionContainer.append(JSON.stringify(questions[0].title));
-        // add an another for loop to looop through the options
-        console.log(questions[i].choices);
-         for (var j = 0; j < questions.length; j++) {
-             console.log(questions[i].choices[j]);
-         }
-
-    }
-
-   /*
-   for (i = 0; i < questions.length; i++) {
-    for (var j = 0; j < questions[i].choices.length; j++) {
-        questionContainer.append(JSON.stringify(questions[0].title));
-            console.log(questions[i].choices[j]);
-    }*/  
-        }
-//end startQuiz fct def
-startQuiz();
-
-//function setNextQuestion(){
-  // var ctrl = document.getElementsByName("questions");
-//         for (var i = 0; i < questions.length; ++i) {
-//             if (questions[i].checked == true) {
-//                 if (i == questions.length - 1) {
-//                     document.getElementsByName("ctrl")[0].checked = true;
-//                 } else {
-//                     document.getElementsByName("ctrl")[i + 1].checked = true;
-//                 }
-//                 break;
-//             }  
-
-//Next Steps:
-//0. Write a gameOver function
-//1. Stop quiz when  timer reaches 0 sec (hint put if stmnt in setTimer fct to wait for this condition)
-//2. In startQuiz, render on the page teh first question in array
-//3. Write nextQuestion fct 

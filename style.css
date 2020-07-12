@@ -2,7 +2,7 @@
 #question-container {
   font-family: 'Oleo Script', cursive;
   text-align: center;
-  font-size: 15px;
+  font-size: 40px;
 }
 #timer {
   color: red;
@@ -10,6 +10,9 @@
   float: right;
   margin-top: -30px;
   font-family: 'Oleo Script', cursive;
+}
+.hide {
+  display: none;
 }
 h2 {
   text-align: center;
@@ -20,17 +23,15 @@ h2 {
   font-size: 30px;
   font-family: 'Oleo Script', cursive;
 }
-#intial {
-    font-size: 15px;
-    font-family: 'Oleo Script', cursive;
-}
+
 #submit {
-    float: right;
     font-family: 'Oleo Script', cursive;
     border-radius: 5px;
+    width: 15%;
 }
 #start-btn {
-  width: 20%;
+  margin-left: 30px;
+  width: 15%;
   font-family: 'Oleo Script', cursive;
   border-radius: 5px;
 }
@@ -41,21 +42,20 @@ h2 {
   font-family: 'Oleo Script', cursive;
 }
 #intial {
-  width: 30%;
-  align-items: center;
+  width: 15%;
+  text-align: center;
   font-family: 'Oleo Script', cursive;
  border-radius: 5px;
 }
 #go-back {
+  width: 15%;
   border-radius: 5px;
   font-family: 'Oleo Script', cursive;
 }
 #clear-score {
+  width: 15%;
   border-radius: 5px;
   font-family: 'Oleo Script', cursive;
-}
-#submit {
-  width: 20%;
 }
 #submit:hover {
   background-color: aqua;
@@ -69,9 +69,13 @@ h2 {
 #clear-score:hover {
   background-color: aqua;
 }
+#start-btn, #intial, #go-back, #clear-score,#submit {
+  float: left;
+}   
 @media only screen and (max-width:500px) {
   /* For mobile phones: */
   .start-button {
+    clear: both;
     width: 100%;
   }
 }
