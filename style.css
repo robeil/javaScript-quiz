@@ -80,7 +80,6 @@ h2 {
   background-color: aqua;
 }
 #start-btn, #intial, #go-back, #clear-score,#submit {
-  background-color: purple;
   float: left;
 }   
 @media only screen and (max-width:500px) {

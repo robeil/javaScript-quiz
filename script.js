@@ -45,7 +45,7 @@ myListner.addEventListener("click",function() {
 }) 
 
 function countDown() {
-    document.getElementById("questions").innerHTML=questions[currentQuestionIndex].title
+    document.getElementById("questions").innerHTML=questions[currentQuestionIndex].title;
     var choices = questions[currentQuestionIndex].choices
     document.getElementById("choices").textContent=""
     for (let i = 0; i < choices.length; i++) {
@@ -59,6 +59,7 @@ function countDown() {
          document.getElementById("choices").appendChild(button)
      }
     document.getElementById("timer").innerHTML=secondsLeft--
+    document.getElementById("btn").classList.remove("hide");
 }
 
 var questionContainer = document.getElementById("question-container");
