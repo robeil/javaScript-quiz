@@ -42,24 +42,85 @@ myListner.addEventListener("click",function() {
     document.getElementById("header").classList.add("hide");
     document.getElementById("question-container").classList.remove("hide");
     setIntervalId = setInterval(countDown, 1000)
+    showquestions()
 }) 
+function countDown(){
+    document.getElementById("timer").innerHTML=secondsLeft--
+    if (secondsLeft < 0){
+        showResults()
+    }
+}
+function showResults(){
+    clearInterval(setIntervalId)
+    document.getElementById("btn").style.display = "block"
+    document.getElementById("question-container").style.display = "none"
+// hice the are of the questions and btn
+//unhide the area with the submit buttons
 
-function countDown() {
+}
+
+function showquestions() {
     document.getElementById("questions").innerHTML=questions[currentQuestionIndex].title;
     var choices = questions[currentQuestionIndex].choices
     document.getElementById("choices").textContent=""
     for (let i = 0; i < choices.length; i++) {
+       console.log("inside the loop:", i)
        
          var button = document.createElement("button")
          
          button.textContent=choices[i]
+
          button.addEventListener("click", function () {
+             button = choices[i];
+    /*let choices =          
+if (button === )*/
+
+        if (answer.correct) {
+             button.dataset.correct = answer.correct
+
+         button.addEventListener('click',selectAnswer)
+
+     } 
+           // get witch one was clicked and compare with the real one
+            // then alert
+                    // if wornkg seconsleft = secons  - 15
+        
              currentQuestionIndex++
+
+             if (currentQuestionIndex >= questions.length){
+                showResults()
+             }
+             else{
+                 showquestions()
+             }
          })
          document.getElementById("choices").appendChild(button)
      }
-    document.getElementById("timer").innerHTML=secondsLeft--
-    document.getElementById("btn").classList.remove("hide");
+
+    console.log("outside the loop")
+
+    var questionContainer = document.getElementById("question-container");
+
+    function selectAnswer(e) {
+        let selectedButton = e.target
+        let correct = selectedButton.dataset.correct
+        setStatusClass(document.body, correct)
+        Array.from(answerButtonsElement.children).forEach(button => {
+            setStatusClass(button, button.dataset.correct)
+        }) 
+    }
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+        element.classList.add('correct')
+    }
+    else {
+        element.classList.add('wrong')
+    }
+    function clearStatusClass(element) {
+        element.classList.add('correct')
+        element.classList.add('wrong')
+    }
+}
 }
 
-var questionContainer = document.getElementById("question-container");

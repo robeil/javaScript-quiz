@@ -34,12 +34,13 @@ h2 {
 }
 
 #submit {
+  margin-right: 20px;
     font-family: 'Oleo Script', cursive;
     border-radius: 5px;
     width: 15%;
 }
 #start-btn {
-  margin-left: 30px;
+  margin-right: 30px;
   width: 15%;
   font-family: 'Oleo Script', cursive;
   border-radius: 5px;
@@ -52,17 +53,20 @@ h2 {
   font-family: 'Oleo Script', cursive;
 }
 #intial {
+  margin-right: 30px;
   width: 15%;
   text-align: center;
   font-family: 'Oleo Script', cursive;
  border-radius: 5px;
 }
 #go-back {
+  margin-left: 10px;
   width: 15%;
   border-radius: 5px;
   font-family: 'Oleo Script', cursive;
 }
 #clear-score {
+  margin-right: 30px;
   width: 15%;
   border-radius: 5px;
   font-family: 'Oleo Script', cursive;
