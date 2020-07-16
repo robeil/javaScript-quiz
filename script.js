@@ -2,15 +2,20 @@
 var timer = document.getElementById("timer");
 var mainTimer = document.getElementById("main");
 var myListner = document.getElementById("start-btn");
-var resert = document.getElementById("clear-score");
+var resetScore = document.getElementById("clear-score");
+var resetIntial = document.getElementById("initial");
+var viewScore = document.getElementById("view");
+var goBack = document.getElementById("go-back");
+var questionContainer = document.getElementById("question-container");
+var submitBtn = document.getElementById("submit");
 var secondsLeft = 75;
 var counter = 0;
 var i;
 var questions = [
     {
         title: '(1) JavaScript was initialyy created to make web pages alive',
-        choices: ['Worrect', 'Wrong'],
-        answer: 'alerts'
+        choices: ['Correct', 'Wrong'],
+        answer: 'Correct'
     },
 
     {
@@ -22,105 +27,90 @@ var questions = [
     {
         title: '(3) In JavaScript if you put a number in quotes, it will be treated as a text string.',
         choices: ['Correct', 'Wrong'],
-        answer: 'alert'
+        answer: 'Correct'
     },
     {
         title: '(4) In the end of the JavaScript, what will appear?',
-        choices: ['<script>','</script>','<html>'],
+        choices: ['<script>', '</script>', '<html>'],
         answer: '</script>'
     },
     {
         title: '(5) In JavaScript, the__________ is object of target language data type enclosing the object of source language.',
-        choices:['form','wrapper','cursor'],
+        choices: ['form', 'wrapper', 'cursor'],
         answer: 'wrapper'
     }
 ]
-
+let a
 var currentQuestionIndex = 0;
 var setIntervalId;
-myListner.addEventListener("click",function() { 
+myListner.addEventListener("click", function () {
     document.getElementById("header").classList.add("hide");
     document.getElementById("question-container").classList.remove("hide");
+    document.getElementById("Score").classList.add("hide");
     setIntervalId = setInterval(countDown, 1000)
     showquestions()
-}) 
-function countDown(){
-    document.getElementById("timer").innerHTML=secondsLeft--
-    if (secondsLeft < 0){
+})
+function countDown() {
+    document.getElementById("timer").innerHTML = secondsLeft--
+    if (secondsLeft < 0) {
         showResults()
     }
 }
-function showResults(){
+function showResults() {
     clearInterval(setIntervalId)
+    localStorage.setItem("highScore", secondsLeft)
+    highScore = localStorage.getItem('highScore');
+    viewScore.innerHTML = highScore;
+    document.getElementById("Score").classList.remove("hide");
+    goBack.classList.add("hide");
+    resetScore.classList.add("hide");
     document.getElementById("btn").style.display = "block"
     document.getElementById("question-container").style.display = "none"
-// hice the are of the questions and btn
-//unhide the area with the submit buttons
-
 }
-
 function showquestions() {
-    document.getElementById("questions").innerHTML=questions[currentQuestionIndex].title;
+
+    document.getElementById("questions").innerHTML = questions[currentQuestionIndex].title;
     var choices = questions[currentQuestionIndex].choices
-    document.getElementById("choices").textContent=""
+    document.getElementById("choices").textContent = ""
+    myListner.classList.add("hide")
     for (let i = 0; i < choices.length; i++) {
-       console.log("inside the loop:", i)
-       
-         var button = document.createElement("button")
-         
-         button.textContent=choices[i]
+        console.log("inside the loop:", i)
 
-         button.addEventListener("click", function () {
-             button = choices[i];
-    /*let choices =          
-if (button === )*/
+        var button = document.createElement("button")
 
-        if (answer.correct) {
-             button.dataset.correct = answer.correct
+        button.textContent = choices[i]
 
-         button.addEventListener('click',selectAnswer)
+        button.addEventListener("click", function () {
+            button = choices[i];
+            console.log(this.textContent);
 
-     } 
-           // get witch one was clicked and compare with the real one
-            // then alert
-                    // if wornkg seconsleft = secons  - 15
-        
-             currentQuestionIndex++
+            if (this.textContent === questions[currentQuestionIndex].answer) {
+                document.getElementById("showAnswer").textContent = "correct";
+            } else {
+                document.getElementById("showAnswer").textContent = "wrong";
+                secondsLeft = secondsLeft - 15
+            }
+            currentQuestionIndex++
 
-             if (currentQuestionIndex >= questions.length){
+            if (currentQuestionIndex >= questions.length) {
                 showResults()
-             }
-             else{
-                 showquestions()
-             }
-         })
-         document.getElementById("choices").appendChild(button)
-     }
-
-    console.log("outside the loop")
-
-    var questionContainer = document.getElementById("question-container");
-
-    function selectAnswer(e) {
-        let selectedButton = e.target
-        let correct = selectedButton.dataset.correct
-        setStatusClass(document.body, correct)
-        Array.from(answerButtonsElement.children).forEach(button => {
-            setStatusClass(button, button.dataset.correct)
-        }) 
-    }
-function setStatusClass(element, correct) {
-    clearStatusClass(element)
-    if (correct) {
-        element.classList.add('correct')
-    }
-    else {
-        element.classList.add('wrong')
-    }
-    function clearStatusClass(element) {
-        element.classList.add('correct')
-        element.classList.add('wrong')
+            }
+            else {
+                showquestions()
+            }
+        })
+        document.getElementById("choices").appendChild(button)
     }
 }
-}
+    console.log("We are strating")
 
+submitBtn.addEventListener("click", function() {
+
+    goBack.classList.add("hide");
+    resetScore.classList.add("hide");
+})
+    
+    goBack.addEventListener("click", function () {
+        
+        Storage.clear();
+    })

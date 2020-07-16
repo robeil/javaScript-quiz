@@ -14,7 +14,9 @@
     <body>
         <!--the high score text and the welcome text-->
         <div class="controls">
-            <h1 id="view">View Highscore</h1>
+            <h1 id="Score">Your Score is :</h1>
+            <h1 id="view"></h1>
+
         </div>
         <div id="main"></div>
         <div id="timer"></div>
@@ -28,21 +30,23 @@
         <div class="container hide " id="question-container">
             <div id="questions"></div>
             <div id="choices"></div>
+            <div id="showAnswer"></div>
         </div>
-        
+
+
         <hr id="hr">
         <div>
-        <button type="button" id="start-btn">Start Quiz</button>
+            <button type="button" id="start-btn">Start Quiz</button>
         </div>
         <!--go back and highscores button-->
         <div id="btn" class="back hide">
             <form>
-                <input id="intial" type="text" placeholder="Intial required" required />
+                Enter Initial <input id="initial" type="text" placeholder="Intial required" required />
             </form>
             <button id="go-back" class="hide">Go back</button>
             <button id="clear-score">Clear Highscores</button>
             <input type="submit" id="submit" value="Submit">
-            
+
         </div>
         <script src="script.js"></script>
     </body>

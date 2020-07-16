@@ -49,10 +49,14 @@ h2 {
   font-size: 15px;
   color: purple;
 }
+#Score {
+  font-size: 15px;
+  color: purple;
+}
 #input {
   font-family: 'Oleo Script', cursive;
 }
-#intial {
+#initial {
   margin-right: 30px;
   width: 15%;
   text-align: center;
@@ -83,7 +87,7 @@ h2 {
 #clear-score:hover {
   background-color: aqua;
 }
-#start-btn, #intial, #go-back, #clear-score,#submit {
+#start-btn, #initial, #go-back, #clear-score,#submit {
   float: left;
 }   
 @media only screen and (max-width:500px) {
