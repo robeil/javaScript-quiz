@@ -47,7 +47,6 @@ myListner.addEventListener("click", function () {
     //document.getElementById("score").classList.add("hide");
     document.getElementById("header").classList.add("hide");
     document.getElementById("question-container").classList.remove("hide");
-    //document.getElementById("Score").classList.add("hide");
     setIntervalId = setInterval(countDown, 1000)
     showquestions()
 })
@@ -62,7 +61,6 @@ function showResults() {
     localStorage.setItem("highScore", secondsLeft)
     highScore = localStorage.getItem('highScore');
     viewScore.innerHTML = highScore;
-    //document.getElementById("score").classList.remove("hide");
     goBack.classList.add("hide");
     resetScore.classList.add("hide");
     document.getElementById("btn").style.display = "block"
@@ -121,7 +119,7 @@ goBack.addEventListener("click", function () {
     goBack.classList.add("hide");
     showResults() 
     showquestions()
-
+    localStorage.clear();
 })
 resetScore.addEventListener("click", function(){
     resetScore.value= '';
