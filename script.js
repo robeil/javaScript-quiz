@@ -8,6 +8,7 @@ var viewScore = document.getElementById("view");
 var goBack = document.getElementById("go-back");
 var questionContainer = document.getElementById("question-container");
 var submitBtn = document.getElementById("submit");
+//var inputBtn = document.getElementById("input");
 var secondsLeft = 75;
 var counter = 0;
 var i;
@@ -46,8 +47,10 @@ var setIntervalId;
 myListner.addEventListener("click", function () {
     //document.getElementById("score").classList.add("hide");
     document.getElementById("header").classList.add("hide");
-    document.getElementById("question-container").classList.remove("hide");
+    document.getElementById("question-container").style.display=("block");
     setIntervalId = setInterval(countDown, 1000)
+    myListner.style.display ="none"
+   console.log("curr:", currentQuestionIndex, setIntervalId)
     showquestions()
 })
 function countDown() {
@@ -67,7 +70,7 @@ function showResults() {
     document.getElementById("question-container").style.display = "none"
 }
 function showquestions() {
-
+console.log("shwQ:", currentQuestionIndex)
     document.getElementById("questions").innerHTML = questions[currentQuestionIndex].title;
     var choices = questions[currentQuestionIndex].choices
     document.getElementById("choices").textContent = ""
@@ -103,7 +106,8 @@ function showquestions() {
 }
 console.log("We are strating")
 
-submitBtn.addEventListener("click", function () {
+submitBtn.addEventListener("click", function (event) {
+   
     // capture the data you want to send to local storage and console.log it
     // send it with localStorage.setItem(...)
     goBack.classList.remove("hide");
@@ -111,17 +115,25 @@ submitBtn.addEventListener("click", function () {
     resetIntial.classList.add("hide");
     submitBtn.classList.add("hide");
 
-
-})
+});
+    
 goBack.addEventListener("click", function () {
-    myListner.classList.remove("hide");
+    document.getElementById("header").classList.remove("hide");
+    //myListner.classList.remove("hide");
+    myListner.style.display = "block"
     resetScore.classList.add("hide");
     goBack.classList.add("hide");
-    showResults() 
-    showquestions()
-    localStorage.clear();
+   showResults() 
+     secondsLeft = 75;
+    document.getElementById("timer").innerHTML = secondsLeft
+    setIntervalId = setInterval(countDown, 1000)
+    // re init all the valuews 
+    currentQuestionIndex = 0
+   // showquestions()
+    localStorage.clear(highScore);
 })
-resetScore.addEventListener("click", function(){
-    resetScore.value= '';
-    highScore.value= '';
+resetScore.addEventListener("click", function() {
+viewScore.classList.add("hide");
+timer.classList.add("hide");
 })
+ 
