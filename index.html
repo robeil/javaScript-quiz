@@ -3,9 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-    <head>
-
+<head>
         <link type="text/css" rel="stylesheet" href="style.css" />
         <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
         <title>Start Quize</title>
@@ -13,8 +11,8 @@
 
     <body>
         <!--the high score text and the welcome text-->
-        <div class="controls">
-            <h1 id="Score">Your Score is :</h1>
+        <div class="control">
+            <h1 id="score">Your Score is :</h1>
             <h1 id="view"></h1>
 
         </div>
@@ -32,20 +30,19 @@
             <div id="choices"></div>
             <div id="showAnswer"></div>
         </div>
-
-
-        <hr id="hr">
-        <div>
+        <hr id="hr"><div>
             <button type="button" id="start-btn">Start Quiz</button>
         </div>
         <!--go back and highscores button-->
         <div id="btn" class="back hide">
             <form>
-                Enter Initial <input id="initial" type="text" placeholder="Intial required" required />
+            <input id="initial" type="text" placeholder="Intial required" required />
             </form>
             <button id="go-back" class="hide">Go back</button>
             <button id="clear-score">Clear Highscores</button>
             <input type="submit" id="submit" value="Submit">
+        </div>
+        <div id="result">
 
         </div>
         <script src="script.js"></script>

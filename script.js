@@ -44,9 +44,10 @@ let a
 var currentQuestionIndex = 0;
 var setIntervalId;
 myListner.addEventListener("click", function () {
+    //document.getElementById("score").classList.add("hide");
     document.getElementById("header").classList.add("hide");
     document.getElementById("question-container").classList.remove("hide");
-    document.getElementById("Score").classList.add("hide");
+    //document.getElementById("Score").classList.add("hide");
     setIntervalId = setInterval(countDown, 1000)
     showquestions()
 })
@@ -61,7 +62,7 @@ function showResults() {
     localStorage.setItem("highScore", secondsLeft)
     highScore = localStorage.getItem('highScore');
     viewScore.innerHTML = highScore;
-    document.getElementById("Score").classList.remove("hide");
+    //document.getElementById("score").classList.remove("hide");
     goBack.classList.add("hide");
     resetScore.classList.add("hide");
     document.getElementById("btn").style.display = "block"
@@ -102,15 +103,27 @@ function showquestions() {
         document.getElementById("choices").appendChild(button)
     }
 }
-    console.log("We are strating")
+console.log("We are strating")
 
-submitBtn.addEventListener("click", function() {
+submitBtn.addEventListener("click", function () {
+    // capture the data you want to send to local storage and console.log it
+    // send it with localStorage.setItem(...)
+    goBack.classList.remove("hide");
+    resetScore.classList.remove("hide");
+    resetIntial.classList.add("hide");
+    submitBtn.classList.add("hide");
 
-    goBack.classList.add("hide");
-    resetScore.classList.add("hide");
+
 })
-    
-    goBack.addEventListener("click", function () {
-        
-        Storage.clear();
-    })
+goBack.addEventListener("click", function () {
+    myListner.classList.remove("hide");
+    resetScore.classList.add("hide");
+    goBack.classList.add("hide");
+    showResults() 
+    showquestions()
+
+})
+resetScore.addEventListener("click", function(){
+    resetScore.value= '';
+    highScore.value= '';
+})
