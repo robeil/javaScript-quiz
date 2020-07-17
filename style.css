@@ -34,13 +34,14 @@ h2 {
 }
 
 #submit {
+  float: right;
   margin-right: 20px;
     font-family: 'Oleo Script', cursive;
     border-radius: 5px;
     width: 15%;
 }
 #start-btn {
-  margin-right: 30px;
+  float: left;
   width: 15%;
   font-family: 'Oleo Script', cursive;
   border-radius: 5px;
@@ -87,7 +88,7 @@ h2 {
 #clear-score:hover {
   background-color: aqua;
 }
-#start-btn, #initial, #go-back, #clear-score,#submit {
+#initial, #go-back, #clear-score,#submit {
   float: left;
 }   
 @media only screen and (max-width:500px) {

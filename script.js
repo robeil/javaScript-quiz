@@ -67,7 +67,7 @@ function showResults() {
     highScore = localStorage.getItem('highScore');
     viewScore.innerHTML = highScore;
     viewScore.classList.add("hide");
-    goBack.classList.add("hide");
+    goBack.classList.remove("hide");
     resetScore.classList.add("hide");
     document.getElementById("btn").style.display = "block"
     document.getElementById("question-container").style.display = "none"
@@ -110,7 +110,8 @@ function showquestions() {
 console.log("We are strating")
 
 submitBtn.addEventListener("click", function (event) {
-
+    var userInput =resetIntial.target;
+    userInput = resetIntial.value;
     // capture the data you want to send to local storage and console.log it
     // send it with localStorage.setItem(...)
     goBack.classList.remove("hide");
@@ -118,16 +119,13 @@ submitBtn.addEventListener("click", function (event) {
     resetIntial.classList.add("hide");
     submitBtn.classList.add("hide");
     viewScore.classList.remove("hide");
-
-    function myFunction() {
-        localStorage.getItem("initial");
-        userInput.innerHTML = highScore;
-    }
-
-    /* if(event.target.matches(scoreInitial)){
-         result.textContent = userInput;
-         result.append(viewScore);
-     }*/
+/*
+    localStorage.setItem("highScore", userInput)
+    highScore = localStorage.getItem('highScore');
+*/
+    // highscore - localst  get ittm
+    // build an obje  {initial:value}
+  
 });
 
 goBack.addEventListener("click", function () {
@@ -139,9 +137,11 @@ goBack.addEventListener("click", function () {
     clearInterval(setIntervalId)
     secondsLeft = 75;
     document.getElementById("timer").innerHTML = secondsLeft
-    setIntervalId = setInterval(countDown, 1000)
+    // setIntervalId = setInterval(countDown, 1000)
     // re init all the valuews 
     resetScore.classList.add("hide");
+    resetIntial.classList.add("hide");
+    submitBtn.classList.add("hide");
     goBack.classList.add("hide");
     currentQuestionIndex = 0
     // showquestions()
