@@ -9,6 +9,7 @@ var goBack = document.getElementById("go-back");
 var questionContainer = document.getElementById("question-container");
 var submitBtn = document.getElementById("submit");
 var result = document.getElementById("result");
+var input1 = document.querySelector(".input");
 var userInput = "";
 //var inputBtn = document.getElementById("input");
 var secondsLeft = 75;
@@ -119,12 +120,11 @@ submitBtn.addEventListener("click", function (event) {
     resetIntial.classList.add("hide");
     submitBtn.classList.add("hide");
     viewScore.classList.remove("hide");
-/*
-    localStorage.setItem("highScore", userInput)
-    highScore = localStorage.getItem('highScore');
-*/
-    // highscore - localst  get ittm
-    // build an obje  {initial:value}
+     if (input1.value === "") {
+         input1.innerHTML = "Please fill the field!";
+         setTimeout(() => input1.remove(), 3000);
+     }
+
   
 });
 

@@ -1,4 +1,6 @@
-
+body {
+background-color: rgb(204, 224, 192);
+}
 #question-container {
   font-family: 'Oleo Script', cursive;
   text-align: center;
