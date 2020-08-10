@@ -1,11 +1,13 @@
 body {
-background-color: rgb(204, 224, 192);
+  background-color: rgb(204, 224, 192);
 }
+
 #question-container {
   font-family: 'Oleo Script', cursive;
   text-align: center;
   font-size: 40px;
 }
+
 #timer {
   color: red;
   font-size: 20px;
@@ -13,12 +15,15 @@ background-color: rgb(204, 224, 192);
   margin-top: -30px;
   font-family: 'Oleo Script', cursive;
 }
+
 .hide {
   display: none;
 }
+
 #hr {
   width: 80%;
 }
+
 p {
   font-size: 30px;
   font-family: 'Oleo Script', cursive;
@@ -29,70 +34,98 @@ h2 {
   text-align: center;
   font-family: 'Oleo Script', cursive;
 }
+
 #question {
+  width: 60%;
+  display: block;
   display: none;
   font-size: 30px;
   font-family: 'Oleo Script', cursive;
 }
 
 #submit {
+ 
   float: right;
-  margin-right: 20px;
-    font-family: 'Oleo Script', cursive;
-    border-radius: 5px;
-    width: 15%;
+  margin-right: -10px;
+  font-family: 'Oleo Script', cursive;
+  border-radius: 5px;
+  width: 15%;
 }
+
 #start-btn {
-  float: left;
+  
+  margin-inline-start: 150px;
+  align-items: center;
   width: 15%;
   font-family: 'Oleo Script', cursive;
   border-radius: 5px;
 }
+
 #view {
   font-size: 15px;
   color: purple;
 }
+
 #score {
   font-size: 15px;
   color: purple;
 }
+
 #input {
+  margin-inline-start: 150px;
   font-family: 'Oleo Script', cursive;
 }
+
 #initial {
   margin-right: 30px;
   width: 15%;
   text-align: center;
   font-family: 'Oleo Script', cursive;
- border-radius: 5px;
+  border-radius: 5px;
 }
+
 #go-back {
   margin-left: 10px;
   width: 15%;
   border-radius: 5px;
   font-family: 'Oleo Script', cursive;
 }
+
 #clear-score {
   margin-right: 30px;
   width: 15%;
   border-radius: 5px;
   font-family: 'Oleo Script', cursive;
 }
+
 #submit:hover {
   background-color: aqua;
 }
+
 #start-btn:hover {
   background-color: aqua;
 }
+
 #go-back:hover {
   background-color: aqua;
 }
+
 #clear-score:hover {
   background-color: aqua;
 }
-#initial, #go-back, #clear-score,#submit {
+
+#initial, #go-back, #clear-score, #submit {
   float: left;
-}   
+}
+.whole-container {
+  text-align: center;
+  justify-content: center;
+  width: 70%;
+  margin-top: 100px;
+  margin-inline-start: 150px;
+  margin-inline-end: 100px;
+  
+}
 @media only screen and (max-width:500px) {
   /* For mobile phones: */
   .start-button {

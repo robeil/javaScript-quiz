@@ -3,20 +3,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<head>
+
+    <head>
         <link type="text/css" rel="stylesheet" href="style.css" />
         <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
         <title>Start Quize</title>
     </head>
-
     <body>
+        <div class="whole-container">
         <!--the high score text and the welcome text-->
         <div>
-            <h1 id="score" >Your Score is :</h1>
+            <h1 id="score">Your Score is :</h1>
         </div>
         <div>
             <h1 id="view"></h1>
-
         </div>
         <div id="main"></div>
         <div id="timer"></div>
@@ -24,7 +24,6 @@
             <h2>Wellcome to JavaScript Questions</h2>
             <p>There are 5 questions and the time given is 15 second per question. If you don't answer it correctly the
                 time will reduce by 15 second. Try it finish on time.</p>
-
         </div>
         </div>
         <div class="container hide " id="question-container">
@@ -32,25 +31,22 @@
             <div id="choices"></div>
             <div id="showAnswer"></div>
         </div>
-        <hr id="hr"><div>
+        <hr id="hr">
+        <div>
             <button type="button" id="start-btn">Start Quiz</button>
         </div>
         <!--go back and highscores button-->
         <div id="btn" class="back hide">
             <form class="input">
-            <input id="initial" type="text" placeholder="Intial required" required />
-        
-            
+                <input id="initial" type="text" placeholder="Intial required" required />
             </form>
             <button id="go-back" class="hide">Go back</button>
             <button id="clear-score">Clear Highscores</button>
             <input type="submit" id="submit" value="Submit">
         </div>
-        <div>
-            <h1></h1>
-        </div>
         <div id="result">
         </div>
+    </div>
         <script src="script.js"></script>
     </body>
 
