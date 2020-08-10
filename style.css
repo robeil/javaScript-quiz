@@ -44,7 +44,6 @@ h2 {
 }
 
 #submit {
- 
   float: right;
   margin-right: -10px;
   font-family: 'Oleo Script', cursive;
@@ -53,7 +52,6 @@ h2 {
 }
 
 #start-btn {
-  
   margin-inline-start: 150px;
   align-items: center;
   width: 15%;
@@ -117,6 +115,7 @@ h2 {
 #initial, #go-back, #clear-score, #submit {
   float: left;
 }
+
 .whole-container {
   text-align: center;
   justify-content: center;
@@ -124,12 +123,17 @@ h2 {
   margin-top: 100px;
   margin-inline-start: 150px;
   margin-inline-end: 100px;
-  
 }
-@media only screen and (max-width:500px) {
+
+@media only screen and (max-width: 375px) {
   /* For mobile phones: */
   .start-button {
     clear: both;
     width: 100%;
+    margin-inline-start: 40px;
+  }
+  .whole-container {
+    margin-inline-start: 40px;
+    margin-inline-end: 50px;
   }
 }
